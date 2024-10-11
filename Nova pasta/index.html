@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1 / 3 / 4
+        const pessoa = {
+            nome: "Jalam Bipal",
+            idade: 37,
+            email: "arabiasaudita@gmail.com",
+            endereco: "Rua Jalim Habbei",
+            cumprimentar: function () {
+                console.log("Olá, meu nome é " + this.nome)
+            }
+        }
+        // 2
+        const livro = {
+            titulo: "A sutil arte de ligar o fds",
+            autor: "Mark Manson",
+            anoPublicacao: 2016
+
+        }
+        console.log(livro.autor)
+        // 5
+        function imprimir(objeto) {
+            console.log(pessoa)
+        }
+        // 6 / 7
+        const carro = {
+            Marca: "Mustang",
+            Modelo: "Shelby",
+            proprietario: {
+                nome: "Jair Bolsonaro",
+                idade: 69
+            }
+        }
+        console.log(carro.proprietario.idade)
+        imprimir()
+        // 8
+        function criar(objeto, chave, valor) {
+            objeto.chave = valor
+        }
+        const cidadao = {
+            nome: "Nathan Soares",
+            idade: 38
+        }
+        criar(cidadao, 'email', 'nathansoares@gmail.com')
+        console.log(cidadao)
+        // 9
+        function temProp(objeto, chave) {
+            for (const key in objeto) {
+                if (key === chave) {
+                    return true
+                }
+            }
+            return false
+        }
+        const animal = {
+            nome: "Douglas",
+            idade: 3,
+            raca: "pitbull"
+        }
+        console.log(temProp(animal, 'nome'))
+        console.log(temProp(animal, 'tamanho'))
+        // 10
+        function nomePessoaMaisVelha(pessoas) {
+            if (pessoas.length === 0) return null
+            let maisVelha = pessoas[0]
+            for (pessoa1 of pessoas) {
+                if (pessoa1.idade > maisVelha.idade) {
+                    maisVelha = pessoa1
+                }
+            }
+            return maisVelha.nome
+        }
+        const pessoas = [
+            { nome: "Jao", idade: 87 },
+            { nome: "Adalberto", idade: 22 },
+            { nome: "Lindolfo", idade: 90 },
+            { nome: "Adolfo", idade: 52 }
+        ]
+        console.log(nomePessoaMaisVelha(pessoas))
+        // 11
+        const celular = {
+            marca: "Xiaomi",
+            modelo: "PocoM5",
+            cor: "Preto",
+            capinha: true,
+            armazenamento: 128,
+            imagens: 0,
+            fotos: function () {
+                this.imagens += 1
+                console.log("Foto")
+            },
+            desinstalar: function () {
+                this.armazenamento += 10
+                console.log("Você desinstalou algo")
+            },
+            baixar: function () {
+                this.armazenamento -= 10
+                console.log("Você baixou algo")
+            },
+            especificacoes: {
+                tela: "6.53",
+                processador: "MediaTek",
+                bateria: "5000mAh"
+            },
+        }
+    </script>
+</body>
+
+</html>
